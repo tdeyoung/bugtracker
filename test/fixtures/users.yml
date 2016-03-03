@@ -3,11 +3,11 @@
 one:
   fname: MyString
   lname: MyString
-  email: MyString
-  thumbnail: MyString
+  email: MyString@aol.com
+  thumbnail: MyString.jpg
 
 two:
   fname: MyString
   lname: MyString
-  email: MyString
-  thumbnail: MyString
+  email: MyString@aol2.com
+  thumbnail: MyString1.jpg

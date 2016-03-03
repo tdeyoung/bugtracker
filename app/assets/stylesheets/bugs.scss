@@ -1,3 +1,39 @@
 // Place all the styles related to the Bugs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bugs {
+
+	.entry{
+		margin-bottom: 30px;
+	}
+
+	 .entry_title {
+		font-size: 120%;
+		font-weight: bold;
+	 }
+
+	 .user {
+	 	font-weight: bold;
+	 }
+
+	 .entry_text {
+		width: 75%;
+		margin-top: 5px;
+	 }
+
+	 .entry_issue_type {
+	 	font-style: italic;
+	 	font-weight: bold;
+	 }
+
+	 .priority {
+	 	font-style: italic;
+	 	font-weight: bold;
+	 }
+
+	 .status {
+	 	font-style: italic;
+	 	font-weight: bold;
+	 }
+}

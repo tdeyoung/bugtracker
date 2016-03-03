@@ -3,6 +3,7 @@ require 'test_helper'
 class BugsControllerTest < ActionController::TestCase
   setup do
     @bug = bugs(:one)
+    @user = users(:one)
   end
 
   test "should get index" do
@@ -18,7 +19,7 @@ class BugsControllerTest < ActionController::TestCase
 
   test "should create bug" do
     assert_difference('Bug.count') do
-      post :create, bug: { description: @bug.description, issue_type: @bug.issue_type, priority: @bug.priority, status: @bug.status, title: @bug.title }
+      post :create, bug: { description: @bug.description, issue_type: @bug.issue_type, priority: @bug.priority, status: @bug.status, title: @bug.title, user_id: @user.id }
     end
 
     assert_redirected_to bug_path(assigns(:bug))

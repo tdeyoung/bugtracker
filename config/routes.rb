@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  get 'contact/index'
+
+  get 'homepage/index'
+
+  get 'homepage/goodbye'
+
   resources :users
   resources :bugs
-  root 'bugs#index'
+  root 'homepage#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

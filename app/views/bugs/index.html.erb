@@ -1,3 +1,4 @@
+<!-- 
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Bugs</h1>
@@ -15,24 +16,38 @@
     </tr>
   </thead>
 
-  <tbody>
+ -->
+
+
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Recent Bugs</h1>
+<h3>Title Issue Type Priority Status</h3>
+
+
     <% @bugs.each do |bug| %>
-      <tr>
-        <td><%= (bug.user.try(:fname) || "NA") %></td>
-        <td><%= (bug.user.try(:lname) || "NA") %></td>
-        <td><%= bug.title %></td>
-        <td><%= bug.description %></td>
-        <td><%= bug.issue_type %></td>
-        <td><%= bug.priority %></td>
-        <td><%= bug.status %></td>
-        <td><%= link_to 'Show', bug %></td>
-        <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
-        <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="entry">
+      <div class="entry_title"> <%= bug.title %> </div>
+      <div class="entry_info">
+        <span class="user"> Reported by <%=  (bug.user.try(:fname) || "NA") %> </span>
+        <span class="user"> <%=  (bug.user.try(:lname) || "NA") %> </span>
+        <span class="date"> on <%= bug.updated_at.to_formatted_s(:long_ordinal) %> </span>
+        <span class="entry_issue_type"> <%=  bug.issue_type %> </span>
+        <span class="priority"> <%=  bug.priority %> </span>
+        <span class="status"> <%=  bug.status %> </span>
+      </div>
+      <div class="entry_text"> <%= bug.description %> </div>
+      <div class=""
+      <div class="actions">
+        <%= link_to 'Show', bug %>
+        <%= link_to 'Edit', edit_bug_path(bug) %>
+        <%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
     <% end %>
-  </tbody>
-</table>
 
-<br>
-
+<span class="btn">
 <%= link_to 'New Bug', new_bug_path %>
+</span>
