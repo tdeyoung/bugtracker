@@ -18,6 +18,9 @@
 
  -->
 
+<span class="btn">
+     <%= link_to 'New Bug', new_bug_path, remote: true %>
+</span>
 
 <% if notice %>
 <p id="notice"><%= notice %></p>
@@ -26,8 +29,13 @@
 <h1>Recent Bugs</h1>
 <h3>Title Issue Type Priority Status</h3>
 
+<div id="bugs">
+  <%= render @bugs %>
+</div>
 
-    <% @bugs.each do |bug| %>
+<div id="bug-form" style="display:none;"></div>
+
+<!--     <% @bugs.each do |bug| %>
     <div class="entry">
       <div class="entry_title"> <%= bug.title %> </div>
       <div class="entry_info">
@@ -46,8 +54,5 @@
         <%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     </div>
-    <% end %>
+    <% end %> -->
 
-<span class="btn">
-<%= link_to 'New Bug', new_bug_path %>
-</span>

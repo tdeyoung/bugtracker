@@ -1,0 +1,23 @@
+  <% if bug == @current_bug %>
+    <div id="current_bug" class="entry">
+  <% else %> 
+    <div class="entry">
+  <% end %>
+
+      <div class="entry_title"> <%= bug.title %> </div>
+      <div class="entry_info">
+        <span class="user"> Reported by <%=  (bug.user.try(:fname) || "NA") %> </span>
+        <span class="user"> <%=  (bug.user.try(:lname) || "NA") %> </span>
+        <span class="date"> on <%= bug.updated_at.to_formatted_s(:long_ordinal) %> </span>
+        <span class="entry_issue_type"> <%=  bug.issue_type %> </span>
+        <span class="priority"> <%=  bug.priority %> </span>
+        <span class="status"> <%=  bug.status %> </span>
+      </div>
+      <div class="entry_text"> <%= bug.description %> </div>
+      <div class=""
+      <div class="actions">
+        <%= link_to 'Show', bug %>
+        <%= link_to 'Edit', edit_bug_path(bug), remote:true %>
+        <%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' }, remote:true %>
+      </div>
+    </div>

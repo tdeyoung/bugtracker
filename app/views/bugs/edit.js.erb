@@ -1,0 +1,7 @@
+$('#bug-form').html("<%= j (render 'form') %>");
+$('#bug-form').slideDown(350);
+setTimeout(function(){
+if((obj = document.getElementById("submitbutton")) && obj != null) {
+	window.scrollTo(0, obj.offsetTop);
+	}
+}, 400);
