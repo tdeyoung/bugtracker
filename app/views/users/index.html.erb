@@ -4,6 +4,9 @@
 
 <h1>Users</h1>
 
+<span class="btn">
+   <%= link_to 'New User', new_user_path %>
+</span>
 
 <% @users.each do |user| %>
 <div class="list">
@@ -20,9 +23,7 @@
   <% end %>
 
 
-<span class="btn">
-   <%= link_to 'New User', new_user_path %>
-</span>
+
 
 
 
