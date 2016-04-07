@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :bugs
-  root 'homepage#index'
+  root 'pages#home'
+  #root 'homepage#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

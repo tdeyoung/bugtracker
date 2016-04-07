@@ -18,9 +18,13 @@
 
  -->
 
-<span class="btn">
+<!-- <span class="btn">
      <%= link_to 'New Bug', new_bug_path, remote: true %>
-</span>
+</span> -->
+
+<span class="new_btn">
+     <%= link_to 'New Bug', new_bug_path, remote: true, class: "btn btn-danger" %>
+</span> 
 
 <% if notice %>
 <p id="notice"><%= notice %></p>

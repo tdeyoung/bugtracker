@@ -4,8 +4,12 @@
 
 <h1>Users</h1>
 
-<span class="btn">
+<!-- <span class="btn">
    <%= link_to 'New User', new_user_path %>
+</span> -->
+
+<span class="new_btn">
+   <%= link_to 'New User', new_user_path, class: "btn btn-danger" %>
 </span>
 
 <% @users.each do |user| %>

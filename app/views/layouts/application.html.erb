@@ -10,26 +10,15 @@
 <body class="<%= controller.controller_name %>">
 
 <div id="banner">
-	<%= @page_title || "BugTracker" %><!-- <label id="code.depot.e.title"/> -->
+	<%= @page_title || "VW Bugs Beetles Vans and Campers" %><!-- <label id="code.depot.e.title"/> -->
 	<%=image_tag("tinybeetle.png", alt: "VW Bug")%>
 </div>
 
-<div id="columns">
-    <div id="side">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/users">Users</a></li>
-        <li><a href="/bugs">Bugs</a></li>
-        <li><a href="/contact/index">Contact</a></li>
-      </ul>
-    </div>
-
-
-	<div id="main">
-		<%= yield %>
-	</div>
-
-</div>
+<%= render 'layouts/navigation' %>
+ <div class="container">
+     <%= yield %>
+ </div>
+ <%= render 'layouts/footer' %>
 
 </body>
 </html>
